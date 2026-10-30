@@ -32,3 +32,14 @@ predict whether a mission succeeds or fails.
 pip install pandas numpy matplotlib seaborn scikit-learn jupyter
 jupyter notebook Codes/Space_Mission_Success_Prediction.ipynb
 ```
+
+## Tests and CI
+The reusable training pipeline in `src/pipeline.py` is covered by pytest
+unit tests in `tests/` (11 tests, synthetic data mirroring the modeling CSV
+schema). GitHub Actions (`.github/workflows/ci.yml`) byte-compiles the sources
+and runs the test suite on every push and pull request to `main`:
+
+```bash
+pip install -r requirements.txt
+python -m pytest -q
+```
