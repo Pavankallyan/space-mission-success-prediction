@@ -60,3 +60,13 @@ On the committed dataset (4,324 missions, 1957-2020, 89.7% success rate)
 it reports logistic regression F1 0.9458 vs random forest F1 0.9410; the
 random forest ranks `year` (0.52) and `loc_city` (0.24) as the most
 important features.
+
+## Make shortcuts
+The `Makefile` wraps the common commands (`PY` is overridable):
+
+```bash
+make setup   # pip install -r requirements.txt
+make test    # python -m pytest -q
+make demo    # python examples/run_pipeline_demo.py
+make clean   # remove caches and bytecode
+```
